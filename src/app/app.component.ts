@@ -8,6 +8,20 @@ import { Component, Input } from '@angular/core';
 export class AppComponent {
   title = 'SudokuSolver';
 
-  @Input() size_x: string = "";
-  @Input() size_y: string = "";
+  size_x: number = 0;
+  size_y: number = 0;
+
+  testLabel : string = "";
+
+  onSizeXChange(value : string) {
+    this.size_x = parseInt(value);
+  }
+
+  onSizeYChange(value : string) {
+    this.size_y = parseInt(value);
+  }
+
+  generate() {
+    this.testLabel = this.size_x + " x " + this.size_y;    
+  }
 }
